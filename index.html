@@ -92,6 +92,40 @@
 
   .hero > *{ position: relative; z-index:1; }
 
+      /* HERO layout split */
+.hero-top{
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.hero-actions{
+  margin-top: 6px;
+}
+
+/* Make buttons feel like a separate “contact bar” */
+.hero-actions .btns{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+/* Email line under buttons */
+.email-line{
+  margin-top: 10px;
+  color: rgba(255,255,255,.70);
+  font-size: 14px;
+}
+
+.email-line a{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px dashed rgba(110,231,255,.35);
+  padding-bottom: 2px;
+}
+
   .name{
     font-size: clamp(30px, 4.4vw, 54px);
     letter-spacing: .2px;
@@ -267,6 +301,16 @@
     font-size: 12px;
     text-align:center;
   }
+
+    /* Center About section text */
+.section.about{
+  text-align: center;
+}
+
+.section.about p{
+  max-width: 820px;
+  margin: 0 auto;
+}
 </style>
 
 </head>
@@ -275,26 +319,39 @@
   <div class="wrap">
 
     <div class="hero">
-      <h1 class="name">Emma Cunningham</h1>
-      <p class="tagline">
-        Applied AI • Data Analytics • Research<br/>
-        Cybersecurity Analytics &amp; Operations (Penn State, May 2026)
-      </p>
 
-      <div class="chips">
-        <span class="chip">4 publications</span>
-      </div>
+  <div class="hero-top">
+    <h1 class="name">Emma Cunningham</h1>
+    <p class="tagline">
+      Applied AI • Data Analytics • Research<br/>
+      Cybersecurity Analytics &amp; Operations (Penn State, May 2026)
+    </p>
+  </div>
 
-<div class="btns">
-  <a class="btn primary" href="EmmaCunningham_CV2026.pdf">Download CV</a>
-  <a class="btn" href="EmmaCunningham2026_resume.pdf">Download Resume</a>
-  <a class="btn" href="mailto:emmaroe33@gmail.com">Email: emmaroe33@gmail.com</a>
-  <a class="btn" href="https://www.linkedin.com/in/emma-cunningham-0a6505293/" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- remove this entire block if you don’t want the bubble -->
+  <!--
+  <div class="chips">
+    <span class="chip">4 publications</span>
+  </div>
+  -->
+
+  <div class="hero-actions">
+    <div class="btns">
+      <a class="btn primary" href="EmmaCunningham_CV2026.pdf">Download CV</a>
+      <a class="btn" href="EmmaCunningham2026_resume.pdf">Download Resume</a>
+      <a class="btn" href="mailto:emmaroe33@gmail.com?subject=Portfolio%20Inquiry%20-%20Emma%20Cunningham">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/emma-cunningham-0a6505293/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="email-line">
+      Email: <a href="mailto:emmaroe33@gmail.com">emmaroe33@gmail.com</a>
+    </div>
+  </div>
+
 </div>
 
+  
 
-      </div>
-    </div>
 
     <div class="section">
       <h2>About</h2>
