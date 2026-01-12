@@ -344,6 +344,52 @@ body::after{
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   z-index:-1;
 }
+    /* Case study blocks inside project cards */
+.case{
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.case h4{
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+}
+
+.case p,
+.case ul{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.case ul{
+  padding-left: 18px;
+}
+
+.case strong{
+  color: var(--text);
+}
+
+.result-metrics{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.metric{
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,.05);
+  font-size: 13px;
+}
+
 
 </style>
 
@@ -468,35 +514,126 @@ body::after{
       <h2>Projects</h2>
 
       <div class="grid">
-        <div class="card">
-          <div class="title">AI Agent for Discrete Mathematics</div>
-          <div class="meta">Independent Project • Visual Studio Code + OpenAI</div>
-          <p>
-            Built an AI agent trained only on professor-provided course materials to generate aligned practice problems and
-            explanations for labs and discrete math topics.
-          </p>
-        </div>
 
-        <div class="card">
-          <div class="title">Mobile Health App (iOS &amp; Android)</div>
-          <div class="meta">React Native • UI + Charting</div>
-          <p>
-            Developed a cross-platform app with UI design and interactive charting. Worked with de-identified survey and
-            consumer wearable metrics (activity, heart rate, sleep) from Ghana and the United States.
-          </p>
+  <!-- AI Agent -->
+  <div class="card">
+    <div class="title">AI Agent for Discrete Mathematics</div>
+    <div class="meta">Independent Project • Visual Studio Code + OpenAI + RStudio</div>
+
+    <div class="case">
+      <div>
+        <h4>Problem</h4>
+        <p>
+          Generic AI tutors often give explanations that don’t match the professor’s methods,
+          notation, or course sequence—making labs and practice sets harder instead of easier.
+        </p>
+      </div>
+
+      <div>
+        <h4>Solution</h4>
+        <p>
+          Built an AI agent trained exclusively on professor-provided course materials
+          (notes, homework formats, and lab expectations) to generate aligned practice problems
+          and step-by-step explanations. Used <strong>RStudio</strong> for stats-driven practice
+          analysis and tracking (difficulty, topic coverage, and error patterns).
+        </p>
+      </div>
+
+      <div>
+        <h4>Result</h4>
+        <div class="result-metrics">
+          <div class="metric"><strong>Course-aligned outputs</strong><br/>Notation + methods match class</div>
+          <div class="metric"><strong>Practice generation</strong><br/>Custom problem sets by topic</div>
+          <div class="metric"><strong>Explanation quality</strong><br/>Step-by-step, lab-ready</div>
+          <div class="metric"><strong>Stats tracking</strong><br/>Coverage &amp; difficulty monitoring</div>
         </div>
-        
-            <div class="card">
-          <div class="title">Inventory Management App for Local Farmers</div>
-          <div class="meta">Application Development • UI Design</div>
-          <p>
-           Built an inventory management application to help local farmers track products
-           and stock levels. Designed a simple, user-friendly interface to support data
-           entry, updates, and basic reporting for daily operations.
-          </p>
-        </div>
+        <p style="margin-top:10px;">
+          (You can replace these with exact numbers once you decide them—like # problems generated,
+          # labs supported, or time saved.)
+        </p>
       </div>
     </div>
+  </div>
+
+
+  <!-- Mobile Health App -->
+  <div class="card">
+    <div class="title">Mobile Health App (iOS &amp; Android)</div>
+    <div class="meta">React Native • UI Design • Interactive Charting</div>
+
+    <div class="case">
+      <div>
+        <h4>Problem</h4>
+        <p>
+          Wearable metrics and survey responses are difficult to interpret without clean
+          visual summaries, trend views, and an interface that supports quick insights.
+        </p>
+      </div>
+
+      <div>
+        <h4>Solution</h4>
+        <p>
+          Developed a cross-platform mobile app with custom UI and interactive charts to explore
+          de-identified survey data and consumer wearable metrics (activity, heart rate, sleep)
+          collected from Ghana and the United States.
+        </p>
+      </div>
+
+      <div>
+        <h4>Result</h4>
+        <div class="result-metrics">
+          <div class="metric"><strong>Cross-platform build</strong><br/>iOS + Android prototype</div>
+          <div class="metric"><strong>UI ownership</strong><br/>Designed app screens + flow</div>
+          <div class="metric"><strong>Interactive charts</strong><br/>Trends &amp; comparisons</div>
+          <div class="metric"><strong>Real datasets</strong><br/>Surveys + wearables</div>
+        </div>
+        <p style="margin-top:10px;">
+          (If you want, we can add real numbers here too: participants, records, chart types, etc.)
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Inventory App -->
+  <div class="card">
+    <div class="title">Inventory Management App for Local Farmers</div>
+    <div class="meta">Application Development • UI Design • Operations Support</div>
+
+    <div class="case">
+      <div>
+        <h4>Problem</h4>
+        <p>
+          Small local farms often track inventory manually, which leads to errors, missed updates,
+          and poor visibility into stock levels during day-to-day operations.
+        </p>
+      </div>
+
+      <div>
+        <h4>Solution</h4>
+        <p>
+          Built an inventory management app to support product tracking, stock updates, and simple reporting.
+          Focused on a clean, easy interface that reduces friction for frequent data entry.
+        </p>
+      </div>
+
+      <div>
+        <h4>Result</h4>
+        <div class="result-metrics">
+          <div class="metric"><strong>Inventory tracking</strong><br/>Products + stock levels</div>
+          <div class="metric"><strong>UI built for speed</strong><br/>Fast entry + edits</div>
+          <div class="metric"><strong>Basic reporting</strong><br/>Daily operational visibility</div>
+          <div class="metric"><strong>Farm-focused design</strong><br/>Simple + practical workflow</div>
+        </div>
+        <p style="margin-top:10px;">
+          (We can swap these with real stats if you have them—like # items managed or # categories supported.)
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
     <footer>
       © <span id="y"></span> Emma Cunningham • Built with GitHub Pages
