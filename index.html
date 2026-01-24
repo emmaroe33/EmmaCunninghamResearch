@@ -390,15 +390,23 @@ body::after{
   font-size: 13px;
 }
 .profile-pic{
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  object-fit: cover;      /* keeps it nicely cropped */
-  display: block;
-  border: 3px solid #fff; /* optional */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* optional */
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+.name-row{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.name{
+  margin: 0;
+}
 
 
 </style>
@@ -411,13 +419,17 @@ body::after{
     <div class="hero">
 
   <div class="hero-top">
-    <img src="Screeenshot 2026-01-24 103717.png" class="profile-pic">
-    <h1 class="name">Emma Cunningham</h1> 
-    <p class="tagline">
-      Applied Research • Data Analytics • AI <br/>
-      Cybersecurity Analytics &amp; Operations (Penn State, May 2026)
-    </p>
+  <div class="name-row">
+    <h1 class="name">Emma Cunningham</h1>
+    <img src="assets/img/profile.png" alt="Emma Cunningham headshot" class="profile-pic">
   </div>
+
+  <p class="tagline">
+    Applied Research • Data Analytics • AI <br/>
+    Cybersecurity Analytics &amp; Operations (Penn State, May 2026)
+  </p>
+</div>
+
 
   <!-- remove this entire block if you don’t want the bubble -->
   <!--
